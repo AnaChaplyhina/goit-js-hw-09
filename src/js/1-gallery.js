@@ -1,4 +1,3 @@
-
 const images = [
   {
     preview: 'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
@@ -47,25 +46,16 @@ const images = [
   },
 ];
 
-
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
-
-const lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'alt', // Використовуємо атрибут alt для підписів
-  captionDelay: 250,   // Затримка в 250 мс для появи підписів
-});
-
-console.log(SimpleLightbox);
-
 
 function createGalleryItems(images) {
   return images
     .map(
-      ({ href, src, alt }) => `
+      ({ preview, original, description }) => `
       <li class="gallery-item">
-        <a class="gallery-link" href="${href}">
-          <img class="gallery-image" src="${src}" alt="${alt}" />
+        <a class="gallery-link" href="${original}">
+          <img class="gallery-image" src="${preview}" alt="${description}" />
         </a>
       </li>`
     )
