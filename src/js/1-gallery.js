@@ -48,9 +48,7 @@ const images = [
 ];
 
 
-// Описаний в документації
 import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 const lightbox = new SimpleLightbox('.gallery a', {
@@ -61,7 +59,6 @@ const lightbox = new SimpleLightbox('.gallery a', {
 console.log(SimpleLightbox);
 
 
-// Функція для створення розмітки галереї
 function createGalleryItems(images) {
   return images
     .map(
@@ -75,11 +72,9 @@ function createGalleryItems(images) {
     .join('');
 }
 
-// Додаємо елементи галереї в DOM
 const galleryContainer = document.querySelector('.gallery');
 galleryContainer.innerHTML = createGalleryItems(images);
 
-// Ініціалізація SimpleLightbox після додавання елементів галереї
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
