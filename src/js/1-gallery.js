@@ -1,3 +1,6 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 const images = [
   {
     preview: 'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
@@ -46,9 +49,6 @@ const images = [
   },
 ];
 
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
-
 function createGalleryItems(images) {
   return images
     .map(
@@ -65,7 +65,8 @@ function createGalleryItems(images) {
 const galleryContainer = document.querySelector('.gallery');
 galleryContainer.innerHTML = createGalleryItems(images);
 
+// Ініціалізація бібліотеки SimpleLightbox
 const lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionDelay: 250,
+  captionsData: 'alt', // Використовуємо атрибут alt для підписів
+  captionDelay: 250,   // Затримка в 250 мс для появи підписів
 });
