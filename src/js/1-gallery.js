@@ -65,7 +65,6 @@ function createGalleryItems(images) {
 const galleryContainer = document.querySelector('.gallery');
 galleryContainer.innerHTML = createGalleryItems(images);
 
-// Ініціалізація бібліотеки SimpleLightbox
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt', // Використовуємо атрибут alt для підписів
   captionDelay: 250,   // Затримка в 250 мс для появи підписів
